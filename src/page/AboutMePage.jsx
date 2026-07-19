@@ -3,7 +3,7 @@ import Profile_img from "../assets/profile.jpeg"
 import { HiArrowDownTray } from 'react-icons/hi2'
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
-import InfiniteScrolleft from '../components/InfiniteScrolleft';
+import InfiniteScrolleft from '../components/InfiniteScrolleft.jsx';
 
 const AboutMePage = () => {
     const containerRef = useRef(null);

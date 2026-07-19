@@ -2,8 +2,8 @@ import React from 'react'
 import profile from "../assets/intro.jpeg"
 import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 import Lottie from 'lottie-react'
-import InfiniteScrolleft from '../components/InfiniteScrolleft'
-import InfiniteScrollright from '../components/InfiniteScrolRight'
+import InfiniteScrolleft from '../components/InfiniteScrolleft.jsx'
+import InfiniteScrollright from '../components/InfiniteScrolright.jsx'
 import { HiArrowDownTray } from 'react-icons/hi2'
 import ProcessTimeline from '../components/Process'
 import Service from '../components/Services'
@@ -17,7 +17,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
-import ContactSection from '../components/ContactSection'
+import ContactSection from '../components/ContactSection.jsx'
 import Footer from '../components/Footer'
 
 gsap.registerPlugin(ScrollTrigger);
