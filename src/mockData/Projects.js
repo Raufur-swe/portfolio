@@ -60,7 +60,7 @@ export const projects = [
 
   {
     id: 4,
-    image: chatApp,
+    image:chatApp,
     title: "Realtime Chat App",
     description:
       "Socket.io powered realtime chat application with authentication and media sharing.",
@@ -75,4 +75,6 @@ export const projects = [
 
     featured: false,
   },
+
+
 ];

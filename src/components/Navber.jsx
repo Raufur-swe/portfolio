@@ -3,23 +3,27 @@ import { CgMenu } from "react-icons/cg";
 import { FaUser } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
 import { Link, NavLink } from "react-router-dom";
-
+import { useCursor } from "../context/CursorContext";
 const Navber = () => {
+
+  const {setEnabled} = useCursor()
+
   const [open, setOpen] = useState(false);
 
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Projects", path: "/projects" },
-    { name: "Services", path: "/services" },
     { name: "Contact", path: "/contact" },
   ];
 
   return (
     <>
+     
       {/* Fixed Navbar */}
-      <header className="fixed top-0 left-0 z-50 w-full px-4 py-5">
-        <div className="mx-auto flex max-w-5xl items-center justify-between rounded-2xl border border-white/20 bg-white/20 px-6 py-4 backdrop-blur-xl shadow-xl">
+      <header className="fixed top-0 left-0 z-50 w-full px-4 py-5" >
+        <div className="mx-auto flex max-w-4xl items-center justify-between rounded-2xl border border-white/20 bg-white/20 px-6 py-4 backdrop-blur-xl shadow-xl"  onMouseEnter={() => setEnabled(false)}
+      onMouseLeave={() => setEnabled(true)}>
 
           {/* Logo */}
           <Link

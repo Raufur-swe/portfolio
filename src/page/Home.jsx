@@ -26,79 +26,79 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
 
-// projects animation
-const projectSectionRef = useRef(null);
-const projectHeaderRef = useRef(null);
-const projectGridRef = useRef(null);
+  // projects animation
+  const projectSectionRef = useRef(null);
+  const projectHeaderRef = useRef(null);
+  const projectGridRef = useRef(null);
 
   // testimonial animation
   const sectionRef = useRef(null);
-const titleRef = useRef(null);
-const gridRef = useRef(null);
+  const titleRef = useRef(null);
+  const gridRef = useRef(null);
 
 
-//projects animation
+  //projects animation
 
-useGSAP(() => {
-  const cards = gsap.utils.toArray(".project-card");
+  useGSAP(() => {
+    const cards = gsap.utils.toArray(".project-card");
 
-  gsap.from(projectHeaderRef.current, {
-    y: 80,
-    opacity: 0,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: projectSectionRef.current,
-      start: "top 80%",
-      end: "top 30%",
-      scrub: 1,
-    },
-  });
+    gsap.from(projectHeaderRef.current, {
+      y: 80,
+      opacity: 0,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: projectSectionRef.current,
+        start: "top 80%",
+        end: "top 30%",
+        scrub: 1,
+      },
+    });
 
-  gsap.from(cards, {
-    y: 100,
-    opacity: 0,
-    stagger: 0.2,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: projectGridRef.current,
-      start: "top 85%",
-      end: "bottom 50%",
-      scrub: 1.5,
-    },
-  });
-}, []);
+    gsap.from(cards, {
+      y: 100,
+      opacity: 0,
+      stagger: 0.2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: projectGridRef.current,
+        start: "top 85%",
+        end: "bottom 60%",
+        scrub: 1,
+      },
+    });
+  }, []);
 
 
-// testimonial animation
-useGSAP(() => {
-  const cards = gsap.utils.toArray(".testimonial-card");
+  // testimonial animation
+  useGSAP(() => {
+    const cards = gsap.utils.toArray(".testimonial-card");
 
-  gsap.from(titleRef.current, {
-    y: 70,
-    opacity: 0,
-    duration: 0.8,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: sectionRef.current,
-      start: "top 80%",
-      end: "top 40%",
-      scrub: 1,
-    },
-  });
+    gsap.from(titleRef.current, {
+      y: 70,
+      opacity: 0,
+      duration: 0.8,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 80%",
+        end: "top 40%",
+        scrub: 1,
+      },
+    });
 
-  gsap.from(cards, {
-    y: 80,
-    opacity: 0,
-    stagger: 0.2,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: gridRef.current,
-      start: "top 80%",
-      end: "bottom 40%",
-      scrub: 1.2,
-    },
-  });
-}, []);
+    gsap.from(cards, {
+      y: 80,
+      opacity: 0,
+      stagger: 0.2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: gridRef.current,
+        start: "top 80%",
+        end: "bottom 40%",
+        scrub: 1.2,
+      },
+    });
+  }, []);
 
 
   return (
@@ -135,44 +135,44 @@ useGSAP(() => {
 
 
       <div
-  ref={projectSectionRef}
-  className="sm:px-10 lg:px-20 flex flex-col gap-4 py-5 rounded-2xl mt-10"
->
-  <div
-    ref={projectHeaderRef}
-    className="flex justify-between items-center bg-[#ffecc3] px-4 py-2 rounded-2xl"
-  >
-    <h4 className="text-2xl font-semibold">
-      Featured <br />
-      <span className="text-xl">Projects</span>
-    </h4>
-
-    <Link
-      to="/projects"
-      className="group inline-flex items-center gap-2 rounded-2xl bg-neutral-900 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-black hover:shadow-2xl active:scale-95"
-    >
-      View More
-      <FiArrowUpRight className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-    </Link>
-  </div>
-
-  <div
-    ref={projectGridRef}
-    className="grid gap-4 md:grid-cols-1 lg:grid-cols-2"
-  >
-    {projects.map((project) => (
-      <div
-        key={project.id}
-        className="project-card"
+        ref={projectSectionRef}
+        className="sm:px-10 lg:px-20 flex flex-col gap-4 py-5 rounded-2xl mt-10"
       >
-        <ProjectCard
-          project={project}
-          options={{ actions: false }}
-        />
+        <div
+          ref={projectHeaderRef}
+          className="flex justify-between items-center bg-[#ffecc3] px-4 py-2 rounded-2xl"
+        >
+          <h4 className="text-2xl font-semibold">
+            Featured <br />
+            <span className="text-xl">Projects</span>
+          </h4>
+
+          <Link
+            to="/projects"
+            className="group inline-flex items-center gap-2 rounded-2xl bg-neutral-900 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-black hover:shadow-2xl active:scale-95"
+          >
+            View More
+            <FiArrowUpRight className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+          </Link>
+        </div>
+
+        <div
+          ref={projectGridRef}
+          className="grid gap-4 md:grid-cols-1 lg:grid-cols-2"
+        >
+          {projects.map((project) => (
+            <div
+              key={project.id}
+              className="project-card"
+            >
+              <ProjectCard
+                project={project}
+                options={{ actions: false }}
+              />
+            </div>
+          ))}
+        </div>
       </div>
-    ))}
-  </div>
-</div>
 
       {/* service section */}
 
@@ -182,38 +182,38 @@ useGSAP(() => {
 
 
       <div
-  ref={sectionRef}
-  className="mt-15 flex flex-col gap-5"
->
-  <h2
-    ref={titleRef}
-    className="text-4xl font-semibold"
-  >
-    Testimonials
-  </h2>
-
-  <div
-    ref={gridRef}
-    className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
-  >
-    {testimonials.map((testimonial) => (
-      <div
-        key={testimonial.id}
-        className="testimonial-card"
+        ref={sectionRef}
+        className="mt-15 flex flex-col gap-5"
       >
-        <TestimonialCard testimonial={testimonial} />
+        <h2
+          ref={titleRef}
+          className="text-4xl font-semibold"
+        >
+          Testimonials
+        </h2>
+
+        <div
+          ref={gridRef}
+          className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          {testimonials.map((testimonial) => (
+            <div
+              key={testimonial.id}
+              className="testimonial-card"
+            >
+              <TestimonialCard testimonial={testimonial} />
+            </div>
+          ))}
+        </div>
       </div>
-    ))}
-  </div>
-</div>
 
-<div className='mt-10'>
-  <ContactSection/>
-</div>
+      <div className='mt-10'>
+        <ContactSection />
+      </div>
 
-<div className='mt-10'>
-  <Footer/>
-</div>
+      <div className='mt-10'>
+        <Footer />
+      </div>
     </div>
   )
 }

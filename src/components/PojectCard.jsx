@@ -23,11 +23,11 @@ const ProjectCard = ({ project, options = {} }) => {
 
       {/* Image */}
       {showImage && (
-        <div className="relative overflow-hidden rounded-b-3xl p-4">
+        <div className=" overflow-hidden rounded-b-3xl p-4">
           <img
             src={image}
             alt={title}
-            className="aspect-square w-full object-cover sm:h-60 lg:h-70 transition duration-700 group-hover:scale-110 rounded-2xl"
+            className=" w-full object-cover h-72 transition duration-700 group-hover:scale-110 rounded-2xl"
           />
 
           <div className="absolute inset-0 bg-black/0 transition duration-500 group-hover:bg-black/20" />

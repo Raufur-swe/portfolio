@@ -14,6 +14,8 @@ const ContactSection = () => {
       scrollTrigger: {
         trigger: sectionRef.current,
         start: "top 80%",
+        end: "top 30%",
+        scrub: 1,
       },
     });
 
@@ -55,7 +57,7 @@ const ContactSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-[#EAE4D3]  w-full rounded-2xl px-5 md:px-10 lg:px-16 py-10 lg:py-16 overflow-hidden"
+      className="bg-[#EAE4D3]  w-full rounded-2xl px-5 md:px-10 lg:px-16 py-10 lg:py-16 "
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
