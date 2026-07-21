@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import { CgMenu } from "react-icons/cg";
 import { FaUser } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink} from "react-router-dom";
 import { useCursor } from "../context/CursorContext";
 const Navber = () => {
 
   const {setEnabled} = useCursor()
 
   const [open, setOpen] = useState(false);
+
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -61,9 +62,9 @@ const Navber = () => {
 
           {/* Button */}
           <div className="hidden lg:block">
-            <button className="rounded-xl bg-black px-6 py-3 font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-neutral-800">
+            <Link to="/contact" className="rounded-xl bg-black px-6 py-3 font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-neutral-800">
               Let's Talk
-            </button>
+            </Link >
           </div>
 
           {/* Mobile Button */}
@@ -109,9 +110,13 @@ const Navber = () => {
                 </NavLink>
               ))}
 
-              <button className="mt-2 rounded-xl bg-black py-3 font-medium text-white transition hover:bg-neutral-800">
-                Let's Talk
-              </button>
+<Link
+  to="/contact"
+  onClick={()=>setOpen(false)}
+  className="mt-2 inline-flex items-center justify-center rounded-xl bg-black px-6 py-3 font-medium text-white transition-all duration-300 hover:bg-neutral-800 hover:scale-105 active:scale-95"
+>
+  Let's Talk
+</Link>
 
             </div>
 
